@@ -1,6 +1,7 @@
 /**
- * 70 爬楼梯
+ * 70.爬楼梯
  * 把数字拆分成 1 和 2 的组合，有多少种组合
+ * https://leetcode-cn.com/problems/climbing-stairs/
  * @param {number} n
  * @returns {number}
  * @example
@@ -29,6 +30,13 @@ console.log(climbStairs(4))
  * @example
  * // F(1)=1，F(2)=1, F(n)=F(n-1)+F(n-2) (n>=3，n∈N*)
  */
+const fib = (n) => {
+  let [a, b] = [0, 1]
+  while (a < n) {
+    [a, b] = [b, b + a]
+    console.log(a)
+  }
+}
 
 // 递归方法
 // 要执行n次代码
