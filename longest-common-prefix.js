@@ -1,9 +1,11 @@
 /**
- * 最长公共前缀
+ * 14. 最长公共前缀
+ * https://leetcode-cn.com/problems/longest-common-prefix/
  * @example
  * 输入: ["flower","flow","flight"]
  * 输出: "fl"
  * @param {string[]} strs
+ * @returns {string}
  */
 const longestCommonPrefix = (strs) => {
   if (Array.isArray(strs) && strs.length < 1) {
