@@ -12,8 +12,7 @@ const findTheDifference = (s, t) => {
    * 查找替换
    */
   let i = 0
-  let len = s.length
-  while (i < len) {
+  while (i < s.length) {
     t = t.replace(s.charAt(i), '')
     i++
   }
