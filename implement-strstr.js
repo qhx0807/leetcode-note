@@ -1,5 +1,6 @@
 /**
- * 实现strStr()
+ * 28.实现strStr()
+ * https://leetcode-cn.com/problems/implement-strstr/
  * @param {string} haystack
  * @param {string} needle
  * @returns {number}
