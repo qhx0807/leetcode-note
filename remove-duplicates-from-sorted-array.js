@@ -1,11 +1,13 @@
 /**
+ * 26. 删除排序数组中的重复项
+ * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
  * 删除排序数组中的重复项
  * FIXME: 必须在原地修改输入数组!
  * @param {number[]} nums
  * @returns {number}
  * @example
- * // returns 5
- * removeDuplicates([0,0,1,1,1,2,2,3,3,4])
+ * 输入: [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+ * 输出: 5
  * TODO:
  * -[x] 数组去重
  */
