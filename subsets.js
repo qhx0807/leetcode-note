@@ -19,6 +19,8 @@ const subsets = (nums) => {
   return arr
 }
 console.log(subsets([1, 2, 3]))
+// 执行用时 : 84 ms, 在Subsets的JavaScript提交中击败了97.58% 的用户
+// 内存消耗 : 35 MB, 在Subsets的JavaScript提交中击败了53.90% 的用户
 /**
  * 二进制枚举子集
  * 与运算(&)：两者都为 1 时，结果即为 1，否则为 0
@@ -32,3 +34,43 @@ console.log(subsets([1, 2, 3]))
 // 2的4次方
 console.log(1 << 4)
 console.log(Math.pow(2, 4))
+
+/**
+ * 子集
+ * @param {number[]} nums
+ * @returns {number[][]}
+ */
+/**
+ * 二进制
+ */
+const subsets1 = (nums) => {
+  // 子集数量 max
+  // 数组长度 len
+  const len = nums.length
+  const max = 1 << len
+  let arr = []
+  for (let i = 0; i < max; i++) {
+    let b = i.toString(2)
+    while (b.length < len) {
+      b = '0' + b
+    }
+    b = b.split('')
+    let c = []
+    for (let j = 0; j < b.length; j++) {
+      if (b[j] === '1') { c.push(nums[j]) }
+    }
+    arr.push(c)
+  }
+  return arr
+}
+// 执行用时 : 88 ms, 在Subsets的JavaScript提交中击败了97.28% 的用户
+// 内存消耗 : 35.5 MB, 在Subsets的JavaScript提交中击败了24.12% 的用户
+console.log(subsets1([0]))
+// 0 0 0
+// 0 0 1
+// 0 1 0
+// 0 1 1
+// 1 0 0
+// 1 0 1
+// 1 1 0
+// 1 1 1
