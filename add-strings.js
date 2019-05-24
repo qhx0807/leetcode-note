@@ -29,3 +29,45 @@ const addStrings = (num1, num2) => {
 }
 
 console.log(addStrings('121', '999'))
+
+/**
+ * 扩展
+ * 多个字符串相加
+ * @param {string[]} strs
+ * @returns {string}
+ */
+const addMutStrings = (strs) => {
+  let arr = []
+  let carry = 0
+  let len = strs.reduce((prev, cur) => prev.length > cur.length ? prev : cur).length
+  for (let i = 0; i < strs.length; i++) {
+    while (strs[i].length < len) {
+      strs[i] = '0' + strs[i]
+    }
+  }
+  for (let j = len - 1; j >= 0; j--) {
+    let sum = carry
+    for (let i = 0; i < strs.length; i++) {
+      sum += Number(strs[i][j])
+    }
+    if (sum >= 10) {
+      arr.push(sum % 10)
+      carry = Math.floor(sum / 10)
+    } else {
+      arr.push(sum)
+      carry = 0
+    }
+  }
+  return carry === 0 ? arr.reverse().join('') : carry + arr.reverse().join('')
+}
+
+console.log(addMutStrings(['121', '999', '8922', '78']))
+
+/**
+ *    0 1 2 1
+ *    0 9 9 9
+ *    8 9 2 2
+ * +  0 0 7 8
+ * ———————————
+ *
+ */
